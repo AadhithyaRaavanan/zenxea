@@ -1,0 +1,90 @@
+{
+  "name": "@zenxea/tokens",
+  "version": "1.0.0",
+  "description": "Zen Xea universal design token system — brand colours, typography (Bebas Neue, Manrope, IBM Plex Mono), CSS variables, Tailwind preset, Next.js font loaders, and theme utilities",
+  "author": "Zen Xea",
+  "license": "MIT",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.js",
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./fonts": {
+      "require": "./dist/fonts.js",
+      "import": "./dist/fonts.js",
+      "types": "./dist/fonts.d.ts"
+    },
+    "./typography": {
+      "require": "./dist/typography.js",
+      "import": "./dist/typography.js",
+      "types": "./dist/typography.d.ts"
+    },
+    "./css": "./dist/zenxea-tokens.css",
+    "./typography.css": "./dist/zenxea-typography.css",
+    "./tailwind": {
+      "require": "./dist/tailwind-preset.js",
+      "import": "./dist/tailwind-preset.js",
+      "types": "./dist/tailwind-preset.d.ts"
+    },
+    "./json": "./dist/tokens.json",
+    "./validate": {
+      "require": "./dist/validate.js",
+      "import": "./dist/validate.js",
+      "types": "./dist/validate.d.ts"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "npm run clean && npm run build:ts && npm run build:css && npm run build:json",
+    "build:ts": "tsc -p tsconfig.build.json",
+    "build:css": "node scripts/build-css.mjs",
+    "build:json": "node scripts/build-json.mjs",
+    "clean": "node -e \"const fs=require('fs');if(fs.existsSync('dist'))fs.rmSync('dist',{recursive:true});\"",
+    "validate": "node scripts/validate-tokens.mjs",
+    "dev": "tsc -p tsconfig.build.json --watch"
+  },
+  "peerDependencies": {
+    "next": ">=13.0.0",
+    "react": ">=18.0.0",
+    "react-dom": ">=18.0.0"
+  },
+  "peerDependenciesMeta": {
+    "next": {
+      "optional": true
+    },
+    "react": {
+      "optional": true
+    },
+    "react-dom": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@types/react": "^19",
+    "next": "^16.4.0",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "typescript": "^5.3.3"
+  },
+  "keywords": [
+    "design-tokens",
+    "zenxea",
+    "colours",
+    "typography",
+    "fonts",
+    "bebas-neue",
+    "manrope",
+    "ibm-plex-mono",
+    "css-variables",
+    "tailwind",
+    "theme",
+    "brand"
+  ]
+}

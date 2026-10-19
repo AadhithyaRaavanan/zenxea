@@ -1,0 +1,98 @@
+{
+  "name": "@zenxea/ui",
+  "version": "1.0.0",
+  "description": "Universal Modern Digital Brutalism + Swiss Modular Grid UI Component Library for Zen Xea Technologies",
+  "author": "Zen Xea",
+  "license": "MIT",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.js",
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./button": {
+      "require": "./dist/components/button/index.js",
+      "import": "./dist/components/button/index.js",
+      "types": "./dist/components/button/index.d.ts"
+    },
+    "./typography": {
+      "require": "./dist/components/typography/index.js",
+      "import": "./dist/components/typography/index.js",
+      "types": "./dist/components/typography/index.d.ts"
+    },
+    "./forms": {
+      "require": "./dist/components/forms/index.js",
+      "import": "./dist/components/forms/index.js",
+      "types": "./dist/components/forms/index.d.ts"
+    },
+    "./layout": {
+      "require": "./dist/components/layout/index.js",
+      "import": "./dist/components/layout/index.js",
+      "types": "./dist/components/layout/index.d.ts"
+    },
+    "./navigation": {
+      "require": "./dist/components/navigation/index.js",
+      "import": "./dist/components/navigation/index.js",
+      "types": "./dist/components/navigation/index.d.ts"
+    },
+    "./feedback": {
+      "require": "./dist/components/feedback/index.js",
+      "import": "./dist/components/feedback/index.js",
+      "types": "./dist/components/feedback/index.d.ts"
+    },
+    "./data-display": {
+      "require": "./dist/components/data-display/index.js",
+      "import": "./dist/components/data-display/index.js",
+      "types": "./dist/components/data-display/index.d.ts"
+    },
+    "./states": {
+      "require": "./dist/components/states/index.js",
+      "import": "./dist/components/states/index.js",
+      "types": "./dist/components/states/index.d.ts"
+    },
+    "./animations": {
+      "require": "./dist/animations/index.js",
+      "import": "./dist/animations/index.js",
+      "types": "./dist/animations/index.d.ts"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "npm run clean && npm run build:ts",
+    "build:ts": "tsc -p tsconfig.build.json",
+    "clean": "node -e \"const fs=require('fs');if(fs.existsSync('dist'))fs.rmSync('dist',{recursive:true});\"",
+    "dev": "tsc -p tsconfig.build.json --watch"
+  },
+  "peerDependencies": {
+    "react": ">=18.0.0",
+    "react-dom": ">=18.0.0"
+  },
+  "dependencies": {
+    "@gsap/react": "^2.1.2",
+    "@zenxea/design-tokens": "file:../design-tokens",
+    "gsap": "^3.15.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "typescript": "^5.3.3"
+  },
+  "keywords": [
+    "zenxea",
+    "ui-components",
+    "design-system",
+    "digital-brutalism",
+    "swiss-grid",
+    "react",
+    "typescript",
+    "accessible"
+  ]
+}

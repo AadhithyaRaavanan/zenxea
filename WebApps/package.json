@@ -1,0 +1,23 @@
+{
+  "name": "zenxea-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "website/*"
+  ],
+  "scripts": {
+    "build": "npm run build:tokens && npm run build:ui && npm run build:web && npm run build:studio",
+    "build:tokens": "npm run build --workspace=packages/design-tokens && npm run build --workspace=packages/tokens",
+    "build:ui": "npm run build --workspace=packages/ui",
+    "validate:tokens": "npm run validate --workspace=packages/design-tokens && npm run validate --workspace=packages/tokens",
+    "build:web": "npm run build --workspace=website/web",
+    "dev:web": "npm run dev --workspace=website/web",
+    "build:studio": "npm run build --workspace=website/studio",
+    "dev:studio": "npm run dev --workspace=website/studio",
+    "lint": "npm run lint --workspaces --if-present"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
